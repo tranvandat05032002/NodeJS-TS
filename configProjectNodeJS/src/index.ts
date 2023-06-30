@@ -7,3 +7,7 @@ const handleFullName: Handle = () => {
   return Promise.resolve(fullName)
 }
 handleFullName().then(console.log)
+
+const address: string = 'Tu Xuong'
+
+console.log(address)
