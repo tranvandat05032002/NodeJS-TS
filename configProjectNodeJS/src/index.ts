@@ -1,26 +1,19 @@
-const sum = (a: number, b: number) => {
-  return a + b
-}
-type Handle = () => Promise<string>
-const fullName = 'Tran Van Dat'
-const handleFullName: Handle = () => {
-  return Promise.resolve(fullName)
-}
-handleFullName().then(console.log)
+import express from 'express'
+const app = express()
+const PORT = 4001
 
-const address: string = 'Tu Xuong'
-
-console.log(address)
-
-interface User {
-  name: string
-  age?: number
+const sumObject = (obj: { a: number; b: number }) => {
+  for (let i = 0; i < 10; i++) {
+    console.log(i)
+  }
+  return obj.a + obj.b
 }
 
-const render = (user: User) => {
-  console.log(user)
-}
-const user = { name: 'TranVanDat' }
-render(user as User)
-// render(user as any)
-render(user)
+app.get('/', (req, res) => {
+  const data: any = { a: 7, b: 100 }
+  const value = sumObject(data)
+  res.send(`Hello world, ${value}`)
+})
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
+})
