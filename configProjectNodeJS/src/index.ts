@@ -10,7 +10,7 @@ const sumObject = (obj: { a: number; b: number }) => {
 }
 
 app.get('/', (req, res) => {
-  const data: any = { a: 7, b: 100 }
+  const data: { a: number; b: number } = { a: 7, b: 100 }
   const value = sumObject(data)
   res.send(`Hello world, ${value}`)
 })
