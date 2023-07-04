@@ -60,3 +60,69 @@ interface Follower {
   created_at: Date
 }
 ```
+
+structure sweets
+
+```TS
+interface Tweet {
+  _id: ObjectId
+  user_id: ObjectId
+  type: TweetType
+  audience: TweetAudience
+  content: string
+  parent_id: null | ObjectId //  chỉ null khi tweet gốc
+  hashtags: ObjectId[]
+  mentions: ObjectId[]
+  medias: Media[]
+  guest_views: number
+  user_views: number
+  created_at: Date
+  updated_at: Date
+}
+interface Media {
+  url: string
+  type: MediaType // video, image
+}
+enum MediaType {
+  Image,
+  Video
+}
+enum TweetAudience {
+  Everyone, // 0
+  TwitterCircle // 1
+}
+enum TweetType {
+  Tweet,
+  Retweet,
+  Comment,
+  QuoteTweet
+}
+```
+
+structure BooksMarks and Like
+
+```JS
+interface Bookmark {
+  _id: ObjectId
+  user_id: ObjectId
+  tweet_id: ObjectId
+  created_at: Date
+}
+
+interface Like {
+  _id: ObjectId
+  user_id: ObjectId
+  tweet_id: ObjectId
+  created_at: Date
+}
+```
+
+structure hashtag
+
+```JS
+interface Hashtag {
+  _id: ObjectId
+  name: string
+  created_at: Date
+}
+```
