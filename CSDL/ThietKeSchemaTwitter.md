@@ -39,7 +39,7 @@ interface User {
 }
 ```
 
-constructure refreshToken
+structure refreshToken
 
 ```JS
 interface RefreshToken {
@@ -47,5 +47,16 @@ interface RefreshToken {
   token: string
   created_at: Date
   user_id: ObjectId
+}
+```
+
+structure follower
+
+```JS
+interface Follower {
+  _id: ObjectId
+  user_id: ObjectId
+  followed_user_id: ObjectId
+  created_at: Date
 }
 ```
