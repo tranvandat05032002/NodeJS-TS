@@ -38,3 +38,14 @@ interface User {
   cover_photo: string // optional
 }
 ```
+
+constructure refreshToken
+
+```JS
+interface RefreshToken {
+  _id: ObjectId
+  token: string
+  created_at: Date
+  user_id: ObjectId
+}
+```
